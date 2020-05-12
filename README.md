@@ -8,6 +8,8 @@ The exchange of Bitcoin and cryptocurrencies is subject to many strict regulatio
 
 Also to build further trust and facilitate safer exchange of Bitcoin, most Bitcoin Exchange Marketplaces, including Local Bitcoins upon which this application is inspired by, take custody of the Bitcoins being exchanged and hold them in escrow. This allows for easier dispute resolution, provides greater confidence for buyers and sellers and significantly reduces the chances of fraudulent transactions occuring. 
 
+BTC addresses have to be associated with profiles. That way, at least a user would be able to view the address and look for transactions consistent with what seller may be advertising to build trust. Also a system could later be put in where a small tx is sent to the wallet and the funds must be sent back in order to verify ownership of wallet to allow for use on the site. (There are better alternative verification methods available, but at least this allows for this possibility).
+
 
 ## User Stories
 
@@ -35,7 +37,7 @@ Profiles:
 
 Viewing overview of listings:
 - As a site visitor, I want to be able to see an overview of listings without logging in.
-- As a buyer, I want to be able see the users name, their payment method(s), price, min/max tx limit, number of trades they've done and their reputation score + a buy button that takes them to the individual listing page
+- As a buyer, I want to be able see the users name, their payment method(s), price, amount, number of trades they've done and their reputation score + a buy button that takes them to the individual listing page
 
 Listings (view listing) detail page:
 - As a buyer, I want to be able to see the users name, their payment method(s), price, the amount, number of trades they've done and their reputation score
