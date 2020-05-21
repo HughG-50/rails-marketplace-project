@@ -1,0 +1,27 @@
+<h1> <%= @user.username %> </h1>
+
+<% if @user.picture.attached? %>
+    <%= image_tag @user.picture %>
+<% else %>
+    <%= image_tag  "https://i.stack.imgur.com/34AD2.jpg"%>
+<% end %>
+
+<ul>
+    <li> Bitcoin address: <%= @user.btc_address %> </li>
+    <li> Bio: <%= @user.bio %> </li>
+</ul>
+
+<h3> Information on <%= @user.username %> </h3>
+
+<ul>
+    <% if @user.feedback_score != nil%>
+        <li>Reputation score: <%= @user.num_completed_listings %> listing(s) sold; <%= number_to_percentage(@user.feedback_score*100, precision: 1) %> </li>
+    <% else %>
+        <li>Reputation score: <%= @user.num_completed_listings %> listing(s) sold; No feedback acquired;
+    <% end %>
+    <li>Number of BTC purchases: <%= @user.num_btc_purchases %> </li>
+    <li>Number of BTC listings sold: <%= @user.num_completed_listings %> </li>
+    <li>Account Created: <%= @user.created_at.strftime("%B %d, %Y") %> </li>
+    <li>Country: <%= @user.country %> </li>
+    <li>City: <%= @user.city %> </li>
+</ul>

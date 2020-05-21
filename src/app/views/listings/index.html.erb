@@ -1,0 +1,23 @@
+<h1>Listings</h1>
+<h2>Buy Bitcoins online with Australian Dollars (AUD)</h2>
+
+<% for listing in @listings %>
+    <ul>
+        <li>Title: <%= listing.title %></li>
+        <li>User: <%= listing.user.username %> </li>
+        <% if listing.user.feedback_score != nil%>
+            <li>Reputation score: <%= listing.user.num_completed_listings %> listing(s) sold; <%= number_to_percentage(listing.user.feedback_score*100, precision: 1) %> </li>
+        <% else %>
+            <li>Reputation score: <%= listing.user.num_completed_listings %> listing(s) sold; No feedback acquired;
+        <% end %>
+        <li>Description: <%= listing.description %></li>
+        <li>Payment Method: <%= listing.payment_method %></li>
+        <li>Price (BTC/AUD): <%= number_to_currency(listing.price_BTC_AUD) %></li>
+        <li>Amount available (AUD): <%= number_to_currency(listing.amount) %></li>
+        <% if user_signed_in? %>
+            <li> <%= link_to  "View Listing", listing_path(listing.id)%> </li>
+        <% else %>
+            <li> <%= link_to  "View Listing", show_basic_path(listing.id)%> </li>
+        <% end %>
+    </ul>
+<% end %>
